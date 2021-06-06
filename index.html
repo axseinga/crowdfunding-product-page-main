@@ -26,33 +26,129 @@
     <div class="page-wrapper">
       <header class="header">
         <nav class="nav">
-          <img
-            src="./images/logo.svg"
-            alt="Crowdfund Logo"
-            class="header__logo"
-          />
-          <button class="header__mobile-menu">
+          <img src="./images/logo.svg" alt="Crowdfund Logo" class="nav__logo" />
+          <button class="nav__mobile-menu">
             <img
               src="./images/icon-hamburger.svg"
               alt=""
-              class="header__mobile-ham"
+              class="nav__mobile-ham"
             />
           </button>
         </nav>
       </header>
-    </div>
-    <section class="intro"></section>
-    <section class="stats">
-      <section class="about"></section>
-    </section>
 
-    <!-- <div class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by <a href="https://github.com/axseinga">Axseinga</a>.
-      </div>
-    -->
+      <section class="intro">
+        <img
+          src="./images/logo-mastercraft.svg"
+          alt="Mastercraft Logo"
+          class="intro__mastercraft-logo"
+        />
+        <h1 class="intro__heading">Mastercraft Bamboo Monitor Riser</h1>
+        <p class="intro__desc">
+          A beautiful & handcrafted monitor stand to reduce neck and eye strain.
+        </p>
+        <div class="intro__btns">
+          <button class="btn intro__cta">Back this project</button>
+          <button class="intro__bookmark">
+            <img
+              src="./images/icon-bookmark.svg"
+              alt="Icon Bookmark"
+              class="intro__bookmark-icon"
+            />
+          </button>
+        </div>
+      </section>
+      <section class="stats">
+        <div class="stats__container">
+          <p class="stats__main">$89,914</p>
+          <p class="stats__desc">of $100,000 backed</p>
+        </div>
+        <hr class="stats__hr" />
+        <div class="stats__container">
+          <p class="stats__main">5,007</p>
+          <p class="stats__desc">total backers</p>
+        </div>
+        <hr class="stats__hr" />
+        <div class="stats__container">
+          <p class="stats__main">56</p>
+          <p class="stats__desc">days left</p>
+        </div>
+        <progress value="80" max="100"></progress>
+      </section>
+      <section class="about">
+        <h2 class="about__heading">About this project</h2>
+        <p class="about__desc">
+          The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform
+          that elevates your screen to a more comfortable viewing height.
+          Placing your monitor at eye level has the potential to improve your
+          posture and make you more comfortable while at work, helping you stay
+          focused on the task at hand.
+          <br />
+          <br />
+          Featuring artisan craftsmanship, the simplicity of design creates
+          extra desk space below your computer to allow notepads, pens, and USB
+          sticks to be stored under the stand.
+        </p>
+        <div class="card">
+          <h3 class="card__heading">Bamboo Stand</h3>
+          <span class="card__heading card__heading--cyan"
+            >Pledge $25 or more</span
+          >
+          <p class="card__desc">
+            You get an ergonomic stand made of natural bamboo. You've helped us
+            launch our promotional campaign, and you’ll be added to a special
+            Backer member list.
+          </p>
+          <div class="card__container">
+            <span class="card__days">101</span
+            ><span class="card__left">left</span>
+          </div>
+          <button class="btn card__cta">Select Reward</button>
+        </div>
+
+        <div class="card">
+          <h3 class="card__heading">Black Edition Stand</h3>
+          <span class="card__heading card__heading--cyan"
+            >Pledge $75 or more</span
+          >
+          <p class="card__desc">
+            You get a Black Special Edition computer stand and a personal thank
+            you. You’ll be added to our Backer member list. Shipping is
+            included.
+          </p>
+          <div class="card__container">
+            <span class="card__days">64</span
+            ><span class="card__left">left</span>
+          </div>
+          <button class="btn card__cta">Select Reward</button>
+        </div>
+
+        <div class="card card--disabled">
+          <h3 class="card__heading">Mahogany Special Edition</h3>
+          <span class="card__heading card__heading--cyan"
+            >Pledge $200 or more</span
+          >
+          <p class="card__desc">
+            You get two Special Edition Mahogany stands, a Backer T-Shirt, and a
+            personal thank you. You’ll be added to our Backer member list.
+            Shipping is included.
+          </p>
+          <div class="card__container">
+            <span class="card__days">0</span
+            ><span class="card__left">left</span>
+          </div>
+          <button class="btn btn--disabled card__cta">Out of Stock</button>
+        </div>
+      </section>
+
+      <!-- <div class="attribution">
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. Coded by <a href="https://github.com/axseinga">Axseinga</a>.
+        </div>
+      -->
+    </div>
 
     <script src="script.js"></script>
   </body>

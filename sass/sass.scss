@@ -7,12 +7,294 @@ $color-secondary: hsl(176, 72%, 28%);
 $color-black: hsl(0, 0%, 0%);
 $color-grey: hsl(0, 0%, 48%);
 $color-white: #fff;
+$color-body: hsla(0, 0%, 97%, 1);
+$color-border: hsla(0, 0%, 92%, 1);
 
 // Fonts
 
 $font-primary: "Commissioner", sans-serif;
 
 // Styles //
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: $font-primary;
+}
+
+body {
+  /*background-image: url(../design/mobile-design.jpg);
+  background-size: 375px;
+  background-repeat: no-repeat;
+  opacity: 0.7;*/
+  background-color: $color-body;
+}
+
+// Components
+
+.btn {
+  &,
+  &:link,
+  &:visited {
+    width: 140px;
+    height: 35px;
+    background-color: $color-primary;
+    color: $color-white;
+    text-decoration: none;
+    padding: 1rem;
+    display: inline-block;
+    border-radius: 10rem;
+    font-size: 1.5rem;
+    font-family: $font-primary;
+    font-weight: 600;
+    border: 1px solid $color-white;
+    cursor: pointer;
+  }
+
+  &:hover,
+  &:active {
+    background-color: $color-secondary;
+  }
+
+  &--disabled {
+    &,
+    &:link,
+    &:visited {
+      background-color: $color-grey;
+    }
+  }
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  background-image: url(../images/image-hero-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 40vh;
+  width: 100%;
+}
+
+// Navigation
+
+.nav {
+  height: 30px;
+  padding: 2.9rem 2.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    width: 13rem;
+    height: 2rem;
+  }
+
+  &__mobile-menu {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+}
+
+// Sections
+
+section {
+  width: 76%;
+  border: 1px solid $color-border;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: $color-white;
+
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 1.5rem;
+}
+
+.intro {
+  position: relative;
+  padding: 4rem 2rem;
+  margin-top: -25px;
+  align-items: center;
+
+  &__mastercraft-logo {
+    position: absolute;
+    left: 50%;
+    top: -25px;
+    transform: translateX(-50%);
+  }
+
+  &__heading {
+    font-size: 2rem;
+    text-align: center;
+    padding: 1rem 2rem;
+  }
+
+  &__desc {
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: 600;
+    padding: 1.5rem 0;
+    line-height: 2rem;
+  }
+
+  &__btns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    padding: 1rem 0;
+  }
+
+  &__cta {
+    width: 200px;
+  }
+
+  &__bookmark {
+    &,
+    &:link,
+    &:visited {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+
+    &:hover,
+    &:active {
+    }
+  }
+}
+
+.stats {
+  border-radius: 10px;
+  padding: 2rem;
+  align-items: center;
+  &__container {
+    text-align: center;
+  }
+
+  &__main {
+    font-size: 3.5rem;
+    font-weight: 600;
+    padding: 0.5rem;
+  }
+
+  &__desc {
+    font-size: 1.3rem;
+    padding: 0.8rem 0 1rem 0;
+    color: $color-grey;
+    opacity: 0.7;
+  }
+
+  &__hr {
+    width: 30%;
+    border-top: 1px solid $color-border;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+
+  width: 90%;
+  height: 10px;
+
+  padding: 2rem 0;
+
+  &::-webkit-progress-bar {
+    background-color: $color-border;
+    border-radius: 8px;
+  }
+
+  &::-webkit-progress-value {
+    background-color: $color-primary;
+    border-radius: 8px;
+  }
+}
+
+.about {
+  border-radius: 10px;
+  padding: 2rem;
+
+  &__heading {
+    font-size: 2rem;
+    padding: 2rem 0;
+  }
+
+  &__desc {
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+    color: $color-grey;
+
+    margin-bottom: 4.2rem;
+  }
+
+  .card {
+    border: 1px solid $color-grey;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+
+    padding: 2.5rem;
+
+    &--disabled {
+      opacity: 0.4;
+    }
+
+    &__heading {
+      font-size: 1.4rem;
+      padding: 0.4rem;
+
+      &--cyan {
+        color: $color-primary;
+        font-weight: 600;
+      }
+    }
+
+    &__desc {
+      font-size: 1.4rem;
+      line-height: 2.5rem;
+      color: $color-grey;
+      padding: 2rem 0;
+    }
+
+    &__container {
+      display: flex;
+      align-items: center;
+    }
+
+    &__days {
+      font-size: 3.5rem;
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+
+    &__left {
+      font-size: 1.5rem;
+      color: $color-grey;
+    }
+
+    &__cta {
+      margin-top: 2rem;
+    }
+  }
+}
+
+// Mobile menu
 
 // Frontend Mentor footer
 
