@@ -50,8 +50,9 @@ body {
   background-image: url(../images/image-hero-mobile.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 40vh;
+  background-position: center;
   width: 100%;
+  padding-bottom: 40%;
   position: relative; }
 
 .overlay {
@@ -79,6 +80,25 @@ body {
     border: none;
     padding: 0;
     z-index: 99; }
+    @media only screen and (min-width: 43.75rem) {
+      .nav__mobile-menu {
+        display: none; } }
+  .nav__menu {
+    min-width: 250px;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly; }
+    @media only screen and (max-width: 43.75rem) {
+      .nav__menu {
+        display: none; } }
+  .nav__link, .nav__link:link, .nav__link:visited {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 700; }
+  .nav__link:hover, .nav__link:active {
+    color: #3cb4ac;
+    text-decoration: underline; }
 
 .mobile-menu__content {
   background-color: #fff;
