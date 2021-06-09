@@ -72,6 +72,12 @@ body {
   }
 }
 
+// Helpers
+
+.hidden {
+  display: none;
+}
+
 .page-wrapper {
   display: flex;
   flex-direction: column;
@@ -85,9 +91,23 @@ body {
   background-size: cover;
   height: 40vh;
   width: 100%;
+
+  position: relative;
 }
 
 // Navigation
+
+.overlay {
+  opacity: 1;
+  visibility: visible;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 100;
+  transform: scale(1.8);
+  z-index: 9;
+}
 
 .nav {
   height: 30px;
@@ -106,6 +126,59 @@ body {
     background-color: transparent;
     border: none;
     padding: 0;
+    z-index: 99;
+  }
+}
+
+// Mobile menu
+
+.mobile-menu {
+  &__content {
+    background-color: $color-white;
+    width: 80%;
+    height: min-content;
+    margin: 0 auto;
+    border-radius: 8px;
+    max-width: 500px;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+  }
+
+  &__list {
+    list-style: none;
+    font-size: 2rem;
+    font-weight: 600;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__hr {
+    width: 100%;
+    border-top: 1px solid $color-body;
+  }
+
+  &__item {
+    padding: 2rem;
+  }
+
+  &__link {
+    &,
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: $color-black;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-primary;
+    }
   }
 }
 
@@ -174,6 +247,8 @@ section {
 
     &:hover,
     &:active {
+      filter: invert(60%) sepia(73%) saturate(369%) hue-rotate(126deg)
+        brightness(89%) contrast(84%);
     }
   }
 }
@@ -186,7 +261,7 @@ section {
     text-align: center;
   }
 
-  &__main {
+  &__counter {
     font-size: 3.5rem;
     font-weight: 600;
     padding: 0.5rem;

@@ -23,6 +23,7 @@
     <title>Frontend Mentor | Crowdfunding product page</title>
   </head>
   <body>
+    <div class="overlay hidden"></div>
     <div class="page-wrapper">
       <header class="header">
         <nav class="nav">
@@ -35,6 +36,24 @@
             />
           </button>
         </nav>
+
+        <div class="mobile-menu hidden">
+          <div class="mobile-menu__content">
+            <ul class="mobile-menu__list">
+              <li class="mobile-menu__item">
+                <a href="#" class="mobile-menu__link">About</a>
+              </li>
+              <hr class="mobile-menu__hr" />
+              <li class="mobile-menu__item">
+                <a href="#" class="mobile-menu__link">Discover</a>
+              </li>
+              <hr class="mobile-menu__hr" />
+              <li class="mobile-menu__item">
+                <a href="#" class="mobile-menu__link">Get Started</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </header>
 
       <section class="intro">
@@ -60,17 +79,17 @@
       </section>
       <section class="stats">
         <div class="stats__container">
-          <p class="stats__main">$89,914</p>
+          <p class="stats__counter">$89,914</p>
           <p class="stats__desc">of $100,000 backed</p>
         </div>
         <hr class="stats__hr" />
         <div class="stats__container">
-          <p class="stats__main">5,007</p>
+          <p class="stats__counter">5,007</p>
           <p class="stats__desc">total backers</p>
         </div>
         <hr class="stats__hr" />
         <div class="stats__container">
-          <p class="stats__main">56</p>
+          <p class="stats__counter">56</p>
           <p class="stats__desc">days left</p>
         </div>
         <progress value="80" max="100"></progress>
