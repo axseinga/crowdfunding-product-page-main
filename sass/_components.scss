@@ -1,0 +1,81 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    width: 140px;
+    height: 35px;
+    background-color: $color-primary;
+    color: $color-white;
+    text-decoration: none;
+    padding: 1rem;
+    display: inline-block;
+    border-radius: 10rem;
+    font-size: 1.5rem;
+    font-family: $font-primary;
+    font-weight: 600;
+    border: 1px solid $color-white;
+    cursor: pointer;
+  }
+
+  &:hover,
+  &:active {
+    background-color: $color-secondary;
+  }
+
+  &--disabled {
+    &,
+    &:link,
+    &:visited {
+      background-color: $color-grey;
+    }
+  }
+}
+
+.card {
+  border: 1px solid $color-grey;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+
+  padding: 2.5rem;
+
+  &--disabled {
+    opacity: 0.4;
+  }
+
+  &__heading {
+    font-size: 1.4rem;
+    padding: 0.4rem;
+
+    &--cyan {
+      color: $color-primary;
+      font-weight: 600;
+    }
+  }
+
+  &__desc {
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+    color: $color-grey;
+    padding: 2rem 0;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__days {
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+  }
+
+  &__left {
+    font-size: 1.5rem;
+    color: $color-grey;
+  }
+
+  &__cta {
+    margin-top: 2rem;
+  }
+}

@@ -4,7 +4,7 @@
   "description": "Challenge from Frontend Mentor",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass sass/sass.scss css/style.css -w"
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
   },
   "author": "Agnieszka Urbanowicz",
   "license": "ISC",

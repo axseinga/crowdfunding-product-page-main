@@ -22,3 +22,13 @@ const toggleImage = function (img, open, close) {
     document.querySelector(img).src = open;
   }
 };
+
+overlay.addEventListener("click", function () {
+  mobileMenu.classList.add("hidden");
+  overlay.classList.add("hidden");
+  toggleImage(
+    ".nav__mobile-ham",
+    "./images/icon-hamburger.svg",
+    "./images/icon-close-menu.svg"
+  );
+});
