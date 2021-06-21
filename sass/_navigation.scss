@@ -18,6 +18,10 @@
   justify-content: space-between;
   align-items: center;
 
+  @include respond(phone) {
+    padding: 2.9rem 3.5rem;
+  }
+
   &__logo {
     width: 13rem;
     height: 2rem;

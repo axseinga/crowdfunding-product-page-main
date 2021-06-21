@@ -38,13 +38,29 @@
 
   padding: 2.5rem;
 
+  @include respond(desktop) {
+    width: 80%;
+    margin: 1rem auto;
+  }
+
   &--disabled {
     opacity: 0.4;
+  }
+
+  &__headings {
+    @include respond(tablet) {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   &__heading {
     font-size: 1.4rem;
     padding: 0.4rem;
+
+    @include respond(desktop) {
+      font-size: 1.6rem;
+    }
 
     &--cyan {
       color: $color-primary;
@@ -57,6 +73,10 @@
     line-height: 2.5rem;
     color: $color-grey;
     padding: 2rem 0;
+
+    @include respond(desktop) {
+      font-size: 1.6rem;
+    }
   }
 
   &__container {
@@ -77,5 +97,12 @@
 
   &__cta {
     margin-top: 2rem;
+  }
+
+  &__footer {
+    @include respond(tablet) {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }

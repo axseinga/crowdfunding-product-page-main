@@ -23,6 +23,10 @@ body {
   padding-bottom: 40%;
 
   position: relative;
+
+  @include respond(desktop) {
+    background-image: url(../images/image-hero-desktop.jpg);
+  }
 }
 
 section {
@@ -36,6 +40,10 @@ section {
   flex-direction: column;
 
   margin-bottom: 1.5rem;
+
+  @include respond(desktop) {
+    width: 60%;
+  }
 }
 
 .intro {
@@ -43,6 +51,14 @@ section {
   padding: 4rem 2rem;
   margin-top: -25px;
   align-items: center;
+
+  @include respond(tablet) {
+    margin-top: -100px;
+  }
+
+  @include respond(desktop) {
+    margin-top: -200px;
+  }
 
   &__mastercraft-logo {
     position: absolute;
@@ -55,14 +71,33 @@ section {
     font-size: 2rem;
     text-align: center;
     padding: 1rem 2rem;
+
+    @include respond(phone) {
+      font-size: 2.5rem;
+      padding: 2.5rem 2rem;
+    }
+
+    @include respond(desktop) {
+      font-size: 3.5rem;
+      padding-top: 6rem;
+    }
   }
 
   &__desc {
     font-size: 1.4rem;
     text-align: center;
-    font-weight: 600;
+    font-weight: 500;
     padding: 1.5rem 0;
     line-height: 2rem;
+
+    @include respond(phone) {
+      font-size: 1.7rem;
+      padding: 2rem 0;
+    }
+
+    @include respond(desktop) {
+      font-size: 2rem;
+    }
   }
 
   &__btns {
@@ -70,7 +105,16 @@ section {
     display: flex;
     justify-content: space-between;
 
-    padding: 1rem 0;
+    padding: 1rem 2rem;
+
+    @include respond(phone) {
+      padding-top: 2rem;
+      justify-content: space-around;
+    }
+
+    @include respond(desktop) {
+      padding-top: 4rem;
+    }
   }
 
   &__cta {
@@ -98,6 +142,21 @@ section {
   border-radius: 10px;
   padding: 2rem;
   align-items: center;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+
+    @include respond(tablet) {
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 450px;
+      padding-top: 4rem;
+    }
+  }
+
   &__container {
     text-align: center;
   }
@@ -120,6 +179,10 @@ section {
     border-top: 1px solid $color-border;
     margin-top: 1rem;
     margin-bottom: 2rem;
+
+    @include respond(tablet) {
+      transform: rotate(90deg);
+    }
   }
 }
 
@@ -131,6 +194,10 @@ progress[value] {
   height: 10px;
 
   padding: 2rem 0;
+
+  @include respond(tablet) {
+    padding: 4rem 0;
+  }
 
   &::-webkit-progress-bar {
     background-color: $color-border;
@@ -147,9 +214,20 @@ progress[value] {
   border-radius: 10px;
   padding: 2rem;
 
+  &__wrapper {
+    @include respond(desktop) {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+
   &__heading {
     font-size: 2rem;
     padding: 2rem 0;
+
+    @include respond(desktop) {
+      font-size: 2.5rem;
+    }
   }
 
   &__desc {
@@ -158,5 +236,9 @@ progress[value] {
     color: $color-grey;
 
     margin-bottom: 4.2rem;
+
+    @include respond(desktop) {
+      font-size: 1.6rem;
+    }
   }
 }

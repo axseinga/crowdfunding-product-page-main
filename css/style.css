@@ -27,11 +27,22 @@
   border-radius: 10px;
   margin-bottom: 2rem;
   padding: 2.5rem; }
+  @media (min-width: 1200px) {
+    .card {
+      width: 80%;
+      margin: 1rem auto; } }
   .card--disabled {
     opacity: 0.4; }
+  @media (min-width: 900px) {
+    .card__headings {
+      display: flex;
+      justify-content: space-between; } }
   .card__heading {
     font-size: 1.4rem;
     padding: 0.4rem; }
+    @media (min-width: 1200px) {
+      .card__heading {
+        font-size: 1.6rem; } }
     .card__heading--cyan {
       color: #3cb4ac;
       font-weight: 600; }
@@ -40,6 +51,9 @@
     line-height: 2.5rem;
     color: #7a7a7a;
     padding: 2rem 0; }
+    @media (min-width: 1200px) {
+      .card__desc {
+        font-size: 1.6rem; } }
   .card__container {
     display: flex;
     align-items: center; }
@@ -52,6 +66,10 @@
     color: #7a7a7a; }
   .card__cta {
     margin-top: 2rem; }
+  @media (min-width: 900px) {
+    .card__footer {
+      display: flex;
+      justify-content: space-between; } }
 
 *,
 *::after,
@@ -81,6 +99,9 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center; }
+  @media (min-width: 600px) {
+    .nav {
+      padding: 2.9rem 3.5rem; } }
   .nav__logo {
     width: 13rem;
     height: 2rem; }
@@ -165,6 +186,9 @@ body {
   width: 100%;
   padding-bottom: 40%;
   position: relative; }
+  @media (min-width: 1200px) {
+    .header {
+      background-image: url(../images/image-hero-desktop.jpg); } }
 
 section {
   width: 76%;
@@ -175,12 +199,21 @@ section {
   display: flex;
   flex-direction: column;
   margin-bottom: 1.5rem; }
+  @media (min-width: 1200px) {
+    section {
+      width: 60%; } }
 
 .intro {
   position: relative;
   padding: 4rem 2rem;
   margin-top: -25px;
   align-items: center; }
+  @media (min-width: 900px) {
+    .intro {
+      margin-top: -100px; } }
+  @media (min-width: 1200px) {
+    .intro {
+      margin-top: -200px; } }
   .intro__mastercraft-logo {
     position: absolute;
     left: 50%;
@@ -190,17 +223,39 @@ section {
     font-size: 2rem;
     text-align: center;
     padding: 1rem 2rem; }
+    @media (min-width: 600px) {
+      .intro__heading {
+        font-size: 2.5rem;
+        padding: 2.5rem 2rem; } }
+    @media (min-width: 1200px) {
+      .intro__heading {
+        font-size: 3.5rem;
+        padding-top: 6rem; } }
   .intro__desc {
     font-size: 1.4rem;
     text-align: center;
-    font-weight: 600;
+    font-weight: 500;
     padding: 1.5rem 0;
     line-height: 2rem; }
+    @media (min-width: 600px) {
+      .intro__desc {
+        font-size: 1.7rem;
+        padding: 2rem 0; } }
+    @media (min-width: 1200px) {
+      .intro__desc {
+        font-size: 2rem; } }
   .intro__btns {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 1rem 0; }
+    padding: 1rem 2rem; }
+    @media (min-width: 600px) {
+      .intro__btns {
+        padding-top: 2rem;
+        justify-content: space-around; } }
+    @media (min-width: 1200px) {
+      .intro__btns {
+        padding-top: 4rem; } }
   .intro__cta {
     width: 200px; }
   .intro__bookmark, .intro__bookmark:link, .intro__bookmark:visited {
@@ -214,6 +269,17 @@ section {
   border-radius: 10px;
   padding: 2rem;
   align-items: center; }
+  .stats__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%; }
+    @media (min-width: 900px) {
+      .stats__wrapper {
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 450px;
+        padding-top: 4rem; } }
   .stats__container {
     text-align: center; }
   .stats__counter {
@@ -230,6 +296,9 @@ section {
     border-top: 1px solid #ebebeb;
     margin-top: 1rem;
     margin-bottom: 2rem; }
+    @media (min-width: 900px) {
+      .stats__hr {
+        transform: rotate(90deg); } }
 
 progress[value] {
   -webkit-appearance: none;
@@ -237,6 +306,9 @@ progress[value] {
   width: 90%;
   height: 10px;
   padding: 2rem 0; }
+  @media (min-width: 900px) {
+    progress[value] {
+      padding: 4rem 0; } }
   progress[value]::-webkit-progress-bar {
     background-color: #ebebeb;
     border-radius: 8px; }
@@ -247,14 +319,24 @@ progress[value] {
 .about {
   border-radius: 10px;
   padding: 2rem; }
+  @media (min-width: 1200px) {
+    .about__wrapper {
+      width: 90%;
+      margin: 0 auto; } }
   .about__heading {
     font-size: 2rem;
     padding: 2rem 0; }
+    @media (min-width: 1200px) {
+      .about__heading {
+        font-size: 2.5rem; } }
   .about__desc {
     font-size: 1.4rem;
     line-height: 2.5rem;
     color: #7a7a7a;
     margin-bottom: 4.2rem; }
+    @media (min-width: 1200px) {
+      .about__desc {
+        font-size: 1.6rem; } }
 
 .attribution {
   font-size: 11px;
