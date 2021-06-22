@@ -29,6 +29,10 @@
       background-color: $color-grey;
     }
   }
+
+  &--continue {
+    width: 100px;
+  }
 }
 
 .card {
@@ -38,6 +42,9 @@
 
   padding: 2.5rem;
 
+  position: relative;
+  transition: 1s;
+
   @include respond(desktop) {
     width: 80%;
     margin: 1rem auto;
@@ -45,6 +52,19 @@
 
   &--disabled {
     opacity: 0.4;
+  }
+
+  &--modal {
+    margin: 1rem 2rem;
+    padding: 0;
+  }
+
+  &--hover {
+    border: 1px solid $color-primary;
+  }
+
+  &__original {
+    padding: 2.5rem;
   }
 
   &__headings {

@@ -22,17 +22,29 @@
 .btn--disabled, .btn--disabled:link, .btn--disabled:visited {
   background-color: #7a7a7a; }
 
+.btn--continue {
+  width: 100px; }
+
 .card {
   border: 1px solid #7a7a7a;
   border-radius: 10px;
   margin-bottom: 2rem;
-  padding: 2.5rem; }
+  padding: 2.5rem;
+  position: relative;
+  transition: 1s; }
   @media (min-width: 1200px) {
     .card {
       width: 80%;
       margin: 1rem auto; } }
   .card--disabled {
     opacity: 0.4; }
+  .card--modal {
+    margin: 1rem 2rem;
+    padding: 0; }
+  .card--hover {
+    border: 1px solid #3cb4ac; }
+  .card__original {
+    padding: 2.5rem; }
   @media (min-width: 900px) {
     .card__headings {
       display: flex;
@@ -71,6 +83,109 @@
       display: flex;
       justify-content: space-between; } }
 
+.modal {
+  width: 90%;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 55; }
+  .modal__text-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    position: relative; }
+  .modal__close {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    z-index: 99;
+    position: absolute;
+    top: 20px;
+    right: 5px; }
+  .modal__wrapper {
+    display: flex;
+    align-items: center; }
+  .modal__headings {
+    display: flex; }
+  .modal__heading {
+    font-size: 2rem;
+    padding: 2rem 0; }
+    @media (min-width: 1200px) {
+      .modal__heading {
+        font-size: 2.5rem; } }
+  .modal__desc {
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+    color: #7a7a7a;
+    margin-bottom: 4.2rem; }
+    @media (min-width: 1200px) {
+      .modal__desc {
+        font-size: 1.6rem; } }
+  .modal__checkbox-label {
+    display: block;
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid #7a7a7a;
+    border-radius: 50%;
+    margin-right: 0.5rem; }
+  .modal__checkmark {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+    background-color: #3cb4ac;
+    display: none; }
+    .modal__checkmark--2-level {
+      top: 40px; }
+  .modal__hr {
+    border: 1px solid #ebebeb; }
+
+.pledge {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .pledge__p {
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+    color: #7a7a7a;
+    padding: 1rem 0; }
+    @media (min-width: 1200px) {
+      .pledge__p {
+        font-size: 1.6rem; } }
+  .pledge__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .pledge__input {
+    width: 60px;
+    height: 35px;
+    margin-right: 1rem;
+    padding: 1rem;
+    display: inline-block;
+    border-radius: 10rem;
+    font-size: 1.5rem;
+    font-family: "Commissioner", sans-serif;
+    font-weight: 400;
+    border: 1px solid #ebebeb;
+    cursor: pointer;
+    text-align: center; }
+    .pledge__input::placeholder {
+      text-align: left; }
+
+.hide-modal {
+  display: none; }
+
+.show-modal {
+  display: block; }
+
 *,
 *::after,
 *::before {
@@ -82,13 +197,15 @@ html {
   font-size: 62.5%;
   font-family: "Commissioner", sans-serif; }
 
-.overlay {
+.overlay,
+.overlay-modal {
   opacity: 1;
   visibility: visible;
   position: fixed;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.65);
+  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.301) 30%, rgba(0, 0, 0, 0.8) 95%);
   z-index: 100;
   transform: scale(1.8);
   z-index: 9; }
@@ -176,7 +293,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  position: relative; }
 
 .header {
   background-image: url(../images/image-hero-mobile.jpg);
