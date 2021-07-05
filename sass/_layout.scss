@@ -127,15 +127,32 @@ section {
     &,
     &:link,
     &:visited {
-      border: none;
-      background-color: transparent;
+      border-radius: 10rem;
+      width: 180px;
+      text-align: center;
+      background-color: $color-body;
+      border: $color-border;
+      font-weight: 700;
+      color: $color-grey;
       cursor: pointer;
+
+      display: flex;
+      align-items: center;
     }
 
     &:hover,
     &:active {
+      color: $color-secondary;
+    }
+
+    &:hover .intro__bookmark-icon,
+    &:active .intro__bookmark-icon {
       filter: invert(60%) sepia(73%) saturate(369%) hue-rotate(126deg)
         brightness(89%) contrast(84%);
+    }
+
+    &__text {
+      margin-left: 1.5rem;
     }
   }
 }

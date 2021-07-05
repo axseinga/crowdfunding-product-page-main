@@ -86,6 +86,7 @@
               alt="Icon Bookmark"
               class="intro__bookmark-icon"
             />
+            <p class="intro__bookmark__text">Bookmark</p>
           </button>
         </div>
       </section>
@@ -183,7 +184,7 @@
               <span class="card__days">0</span
               ><span class="card__left">left</span>
             </div>
-            <button class="btn btn--disabled card__cta">Out of Stock</button>
+            <button type="button" class="btn btn--disabled card__cta" disabled>Out of Stock</button>
           </div>
         </div>
       </section>
@@ -215,9 +216,11 @@
         <div class="card card--modal">
           <div class="card__original">
             <div class="card__headings modal__headings">
-              <span class="modal__checkbox-label"></span>
-              <span class="modal__checkmark"></span>
-              <h3 class="card__heading">Pledge with no reward</h3>
+              <label class="card__label label">
+                <input class="label__radio label__radio--default" type="radio" name="pledge">
+                <span class="label__select"></span>
+                <h3 class="card__heading">Pledge with no reward</h3>
+              </label>
             </div>
             <p class="card__desc">
               Choose to support us without a reward if you simply believe in our
@@ -237,14 +240,16 @@
         <div class="card card--modal">
           <div class="card__original">
             <div class="modal__wrapper">
-              <span class="modal__checkbox-label"></span>
-              <span class="modal__checkmark modal__checkmark--2-level"></span>
-              <div class="card__headings">
-                <h3 class="card__heading">Bamboo Stand</h3>
-                <span class="card__heading card__heading--cyan"
-                  >Pledge $25 or more</span
-                >
-              </div>
+              <label class="card__label label">
+                <input class="label__radio label__radio--default" type="radio" name="pledge">
+                <span class="label__select"></span>
+                <div class="card__headings">
+                  <h3 class="card__heading">Bamboo Stand</h3>
+                  <span class="card__heading card__heading--cyan"
+                    >Pledge $25 or more</span
+                  >
+                </div>
+              </label>
             </div>
             <p class="card__desc">
               You get an ergonomic stand made of natural bamboo. You've helped
@@ -264,15 +269,16 @@
               ><p class="pledge__p">Enter your pledge</p></label
             >
             <div class="pledge__buttons">
-              <input
+              <span class="pledge__input-wrapper">
+                <input
                 type="number"
                 min="25"
                 id="pledge"
                 name="enter-pledge"
                 class="pledge__input"
-                placeholder="$"
                 required
               />
+              </span>
               <input type="submit" value="Continue" class="btn btn--continue pledge__btn-continue">
               </input>
             </div>
@@ -282,14 +288,16 @@
         <div class="card card--modal">
           <div class="card__original">
             <div class="modal__wrapper">
-              <span class="modal__checkbox-label"></span>
-              <span class="modal__checkmark modal__checkmark--2-level"></span>
-              <div class="card__headings">
-                <h3 class="card__heading">Black Edition Stand</h3>
-                <span class="card__heading card__heading--cyan"
-                  >Pledge $75 or more</span
-                >
-              </div>
+              <label class="card__label label">
+                <input class="label__radio label__radio--default" type="radio" name="pledge">
+                <span class="label__select"></span>
+                <div class="card__headings">
+                  <h3 class="card__heading">Black Edition Stand</h3>
+                  <span class="card__heading card__heading--cyan"
+                    >Pledge $75 or more</span
+                  >
+                </div>
+              </label>
             </div>
             <p class="card__desc">
               You get a Black Special Edition computer stand and a personal thank
@@ -315,7 +323,6 @@
                 id="pledge"
                 name="enter-pledge"
                 class="pledge__input"
-                placeholder="$"
                 required
               />
               <input type="submit" value="Continue" class="btn btn--continue pledge__btn-continue">
@@ -327,13 +334,16 @@
         <div class="card card--disabled card--modal">
           <div class="card__original">
             <div class="modal__wrapper">
-              <span class="modal__checkbox-label"></span>
-              <div class="card__headings">
-                <h3 class="card__heading">Mahogany Special Edition</h3>
-                <span class="card__heading card__heading--cyan"
-                  >Pledge $200 or more</span
-                >
-              </div>
+              <label class="card__label label">
+                <input class="label__radio label__radio--default" type="radio" name="pledge" disabled>
+                <span class="label__select"></span>
+                <div class="card__headings">
+                  <h3 class="card__heading">Mahogany Special Edition</h3>
+                  <span class="card__heading card__heading--cyan"
+                    >Pledge $200 or more</span
+                  >
+                </div>
+              </label>
             </div>
             <p class="card__desc">
               You get two Special Edition Mahogany stands, a Backer T-Shirt, and a

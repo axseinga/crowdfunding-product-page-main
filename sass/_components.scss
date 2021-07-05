@@ -45,6 +45,11 @@
   position: relative;
   transition: 1s;
 
+  @include respond(tablet) {
+    width: 90%;
+    margin: 1rem auto;
+  }
+
   @include respond(desktop) {
     width: 80%;
     margin: 1rem auto;

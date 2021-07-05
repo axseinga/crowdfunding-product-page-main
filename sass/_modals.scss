@@ -58,31 +58,6 @@
     }
   }
 
-  &__checkbox-label {
-    display: block;
-    position: relative;
-    width: 2rem;
-    height: 2rem;
-    border: 1px solid $color-grey;
-    border-radius: 50%;
-    margin-right: 0.5rem;
-  }
-
-  &__checkmark {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    height: 1.2rem;
-    width: 1.2rem;
-    border-radius: 50%;
-    background-color: $color-primary;
-    display: none;
-
-    &--2-level {
-      top: 40px;
-    }
-  }
-
   &__hr {
     border: 1px solid $color-border;
   }
@@ -119,17 +94,72 @@
     padding: 1rem;
     display: inline-block;
     border-radius: 10rem;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-family: $font-primary;
     font-weight: 400;
     border: 1px solid $color-border;
     cursor: pointer;
     text-align: center;
+  }
 
-    &::placeholder {
-      text-align: left;
+  &__input-wrapper {
+    position: relative;
+
+    &::after {
+      content: "$";
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+      font-size: 1.7rem;
+      font-family: $font-primary;
+      font-weight: 700;
+
+      color: $color-grey;
+      opacity: 0.8;
     }
   }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  transition: all 1s;
+
+  &__radio {
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  &__select {
+    height: 25px;
+    width: 25px;
+    background-color: $color-white;
+    border-radius: 50%;
+    border: 1px solid $color-border;
+    margin-right: 1rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      top: 5px;
+      left: 5px;
+      width: 1.5rem;
+      height: 1.5rem;
+      position: absolute;
+      border-radius: 50%;
+      background-color: $color-primary;
+      display: none;
+    }
+  }
+}
+
+.label input:checked ~ .label__select:after {
+  display: block;
 }
 
 .hide-modal {
