@@ -1,6 +1,21 @@
 const mobileOpenButton = document.querySelector(".nav__mobile-ham");
 const mobileMenu = document.querySelector(".mobile-menu");
 const overlay = document.querySelector(".overlay");
+const backProjectButton = document.querySelector(".intro__cta");
+const modalBackProject = document.querySelector(".modal");
+const overlayModal = document.querySelector(".overlay-modal");
+const modalCloseButton = document.querySelector(".modal__close");
+const selectRewardBtns = document.querySelectorAll(".card__cta");
+const radioButtons = document.querySelectorAll(".label__select");
+const cards = document.querySelectorAll(".card--active");
+const cardsFooter = document.querySelectorAll(".card__addition");
+const bookmarkBtn = document.querySelector(".intro__bookmark");
+const radioCheckeds = document.querySelectorAll(".label__radio");
+const pledgeForms = document.querySelectorAll(".pledge");
+const counterTotal = document.querySelector(".stats__total");
+const backersTotal = document.querySelector(".stats__backers");
+const modalSuccess = document.querySelector(".success-modal");
+const btnSuccess = document.querySelector(".btn--success");
 
 // Open - close mobile menu //
 
@@ -43,47 +58,66 @@ if (overlay) {
 
 // Open modal - when clicked on 'Back this project'
 
-const backProjectButton = document.querySelector(".intro__cta");
-const modalBackProject = document.querySelector(".modal");
-const overlayModal = document.querySelector(".overlay-modal");
-const modalCloseButton = document.querySelector(".modal__close");
-
 const openModalPledge = function () {
-  console.log("Clicked");
   modalBackProject.classList.remove("hide-modal");
   overlayModal.classList.remove("hidden");
+  window.scrollTo(0, 0);
 };
 
 if (backProjectButton) {
   backProjectButton.addEventListener("click", openModalPledge);
 }
 
-// Hide modal when click on x or on overlay
+// Open modal when clicked on 'Select Reward'
 
-const closeModalWhenOverlayClicked = function () {
+selectRewardBtns.forEach((btn) => {
+  if (!btn.classList.contains("btn--disabled")) {
+    btn.addEventListener("click", openModalPledge);
+  }
+});
+
+// Deselect radio buttons
+
+const deselectRadioBtns = function () {
+  radioCheckeds.forEach((btn) => {
+    btn.checked = false;
+  });
+};
+
+// Deactive all selected cards
+
+const deactiveCards = function () {
+  cards.forEach((card) => {
+    card.classList.remove("card--selected");
+  });
+  cardsFooter.forEach((footer) => {
+    footer.classList.add("hide-footer");
+    footer.classList.remove("show-footer");
+  });
+};
+
+// Close modal when clicked on x or overlay
+
+const closeModal = function () {
   overlayModal.classList.add("hidden");
   modalBackProject.classList.add("hide-modal");
+  if (modalSuccess.classList.contains("show-modal")) {
+    modalSuccess.classList.remove("show-modal");
+    modalSuccess.classList.add("hide-modal");
+  }
+  deselectRadioBtns();
+  deactiveCards();
 };
 
 if (overlayModal) {
-  overlayModal.addEventListener("click", closeModalWhenOverlayClicked);
+  overlayModal.addEventListener("click", closeModal);
 }
 
-const closeModalWhenCloseBtn = function () {
-  overlayModal.classList.add("hidden");
-  modalBackProject.classList.add("hide-modal");
-};
-
 if (modalCloseButton) {
-  modalCloseButton.addEventListener("click", closeModalWhenCloseBtn);
+  modalCloseButton.addEventListener("click", closeModal);
 }
 
 // when card is clicked show checkmark, change border, show card__additional
-
-const radioButtons = document.querySelectorAll(".label__select");
-console.log(radioButtons);
-const cards = document.querySelectorAll(".card--active");
-const cardsFooter = document.querySelectorAll(".card__addition");
 
 radioButtons.forEach((btn, i) => {
   btn.addEventListener("click", () => {
@@ -95,10 +129,82 @@ radioButtons.forEach((btn, i) => {
         card.classList.remove("card--selected");
       });
       cardsFooter.forEach((footer) => {
-        footer.classList.add("hidden");
+        footer.classList.remove("show-footer");
+        footer.classList.add("hide-footer");
       });
       cards[i].classList.add("card--selected");
-      cardsFooter[i].classList.remove("hidden");
+      cardsFooter[i].classList.add("show-footer");
+      cardsFooter[i].classList.remove("hide-footer");
     }
   });
+});
+
+// Toggle bookmark
+
+const toggleBookmark = function () {
+  const text = bookmarkBtn.lastElementChild;
+  const svg = bookmarkBtn.firstElementChild;
+  console.log(svg);
+  text.classList.toggle("bookmarked-text");
+  text.innerText === "Bookmark"
+    ? (text.innerText = "Bookmarked")
+    : (text.innerText = "Bookmark");
+  svg.classList.toggle("bookmarked-svg");
+};
+
+bookmarkBtn.addEventListener("click", toggleBookmark);
+
+// Add pledge to total and increase backers by 1
+
+const increaseTotal = function (input) {
+  const inputValue = +input.value;
+  const counterStart = parseFloat(
+    counterTotal.innerText.slice(1).replace(/,/g, "")
+  );
+  const newCounter = counterStart + inputValue;
+  counterTotal.innerText = `$${newCounter
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+};
+
+const increaseBackers = function () {
+  const backersStart = backersTotal.innerText.replace(/,/g, "");
+  backersTotal.innerText = (+backersStart + 1)
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
+const showSuccessMessage = function () {
+  console.log(modalSuccess);
+  modalSuccess.classList.remove("hide-modal");
+  modalSuccess.classList.add("show-modal");
+  overlayModal.classList.remove("hidden");
+  window.scrollTo(0, 0);
+};
+
+pledgeForms.forEach((form) => {
+  form.addEventListener("click", function (e) {
+    const target = e.target;
+    if (target.classList.contains("btn")) {
+      const input = target.parentElement.firstElementChild.firstElementChild;
+      if (input === null) {
+        // close modals and show succes message
+        closeModal();
+      } else {
+        increaseTotal(input);
+        increaseBackers();
+        closeModal();
+        // close modals and show succes message
+        showSuccessMessage();
+      }
+    }
+  });
+});
+
+// Close success message
+
+btnSuccess.addEventListener("click", function () {
+  modalSuccess.classList.remove("show-modal");
+  modalSuccess.classList.add("hide-modal");
+  overlayModal.classList.add("hidden");
 });

@@ -1,5 +1,5 @@
 .modal {
-  width: 90%;
+  width: 60%;
   background-color: white;
   border-radius: 10px;
   position: absolute;
@@ -9,6 +9,7 @@
   justify-content: center;
   align-items: center;
   z-index: 55;
+  padding: 2rem;
 
   &__text-wrapper {
     width: 90%;
@@ -68,7 +69,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: slideFromTop 1s ease-in;
+
+  @include respond(desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &--no-pledge {
+    @include respond(desktop) {
+      justify-content: flex-end;
+    }
+  }
 
   &__p {
     font-size: 1.4rem;
@@ -101,6 +112,10 @@
     border: 1px solid $color-border;
     cursor: pointer;
     text-align: center;
+
+    @include respond(desktop) {
+      width: 80px;
+    }
   }
 
   &__input-wrapper {
@@ -110,7 +125,7 @@
       content: "$";
       position: absolute;
       top: 50%;
-      left: 15px;
+      left: 12px;
       transform: translateY(-50%);
       font-size: 1.7rem;
       font-family: $font-primary;
@@ -156,11 +171,48 @@
       background-color: $color-primary;
       display: none;
     }
+
+    &:hover,
+    &:active {
+      background: $color-border;
+      border: 1px solid $color-primary;
+    }
   }
 }
 
 .label input:checked ~ .label__select:after {
   display: block;
+}
+
+.success-modal {
+  width: 60%;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 55;
+  padding: 3rem;
+  text-align: center;
+
+  &__icon {
+    width: 5rem;
+    height: auto;
+  }
+
+  &__heading {
+    font-size: 2rem;
+    padding: 2rem;
+  }
+
+  &__desc {
+    color: $color-grey;
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
 }
 
 .hide-modal {

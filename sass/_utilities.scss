@@ -1,8 +1,26 @@
 .hidden {
   display: none;
-  animation: slideFromTop 1s ease-in;
 }
 
 .show-modal {
   display: block;
+}
+
+.hide-footer {
+  margin-top: -100px;
+  visibility: hidden;
+}
+
+.show-footer {
+  visibility: visible;
+  margin-top: 0;
+}
+
+.bookmarked-text {
+  color: $color-secondary;
+}
+
+.bookmarked-svg {
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(180deg)
+    brightness(104%) contrast(107%);
 }

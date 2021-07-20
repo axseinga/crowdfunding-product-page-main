@@ -93,12 +93,12 @@
       <section class="stats">
         <div class="stats__wrapper">
           <div class="stats__container">
-            <p class="stats__counter">$89,914</p>
+            <p class="stats__counter stats__total">$89,914</p>
             <p class="stats__desc">of $100,000 backed</p>
           </div>
           <hr class="stats__hr" />
           <div class="stats__container">
-            <p class="stats__counter">5,007</p>
+            <p class="stats__counter stats__backers">5,007</p>
             <p class="stats__desc">total backers</p>
           </div>
           <hr class="stats__hr" />
@@ -201,7 +201,7 @@
       <div class="modal hide-modal">
         <div class="modal__text-wrapper">
           <h2 class="modal__heading">Back this project</h2>
-          <button class="modal__close">
+          <button class="btn--close modal__close">
             <img
               src="./images/icon-close-modal.svg"
               alt=""
@@ -230,9 +230,9 @@
               updates via email.
             </p>
           </div>
-          <div class="card__addition hidden">
+          <div class="card__addition hide-footer">
             <hr class="modal__hr" />
-          <div class="modal__pledge pledge">
+          <div class="modal__pledge pledge pledge--no-pledge">
             <button class="btn btn--continue pledge__btn-continue">
               Continue
             </button>
@@ -240,7 +240,7 @@
           </div>
         </div>
         <div class="card card--modal card--active">
-          <div class="card__original">
+          <div class="card__original card__original--desktop">
             <div class="modal__wrapper">
               <label class="card__label label">
                 <input class="label__radio" type="radio" name="pledge">
@@ -265,7 +265,7 @@
               </div>
             </div>
           </div>
-          <div class="card__addition hidden">
+          <div class="card__addition hide-footer">
             <hr class="modal__hr" />
               <div class="modal__pledge pledge">
                 <label for="pledge" class="pledge__label"
@@ -276,6 +276,7 @@
                   <input
                   type="number"
                   min="25"
+                  value="25"
                   id="pledge"
                   name="enter-pledge"
                   class="pledge__input"
@@ -290,7 +291,7 @@
         </div>
 
         <div class="card card--modal card--active">
-          <div class="card__original">
+          <div class="card__original card__original--desktop">
             <div class="modal__wrapper">
               <label class="card__label label">
                 <input class="label__radio label__radio" type="radio" name="pledge">
@@ -315,7 +316,7 @@
               </div>
             </div>
           </div>
-          <div class="card__addition hidden">
+          <div class="card__addition hide-footer">
             <hr class="modal__hr" />
             <div class="modal__pledge pledge">
               <label for="pledge" class="pledge__label"
@@ -327,6 +328,7 @@
                   type="number"
                   min="25"
                   id="pledge"
+                  value="75"
                   name="enter-pledge"
                   class="pledge__input"
                   required
@@ -366,6 +368,20 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- success modal -->
+      <div class="success-modal hide-modal">
+          <img src="./images/icon-check.svg" alt="Success" class="success-modal__icon">
+          <h4 class="success-modal__heading">
+            Thanks for your support!
+          </h4>
+          <p class="success-modal__desc">
+            Thanks for your support! Your pledge brings us one step closer to sharing
+            Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our
+            campaign is completed. Got it!
+          </p>
+          <button class="btn btn--success">Got it!</button>
       </div>
     </div>
 

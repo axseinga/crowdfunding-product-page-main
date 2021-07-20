@@ -1,15 +1,22 @@
 .hidden {
-  display: none;
-  animation: slideFromTop 1s ease-in; }
+  display: none; }
 
 .show-modal {
   display: block; }
 
-@keyframes slideFromTop {
-  0% {
-    visibility: hidden; }
-  100% {
-    visibility: visible; } }
+.hide-footer {
+  margin-top: -100px;
+  visibility: hidden; }
+
+.show-footer {
+  visibility: visible;
+  margin-top: 0; }
+
+.bookmarked-text {
+  color: #147b74; }
+
+.bookmarked-svg {
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(180deg) brightness(104%) contrast(107%); }
 
 .btn, .btn:link, .btn:visited {
   width: 140px;
@@ -34,6 +41,18 @@
 
 .btn--continue {
   width: 100px; }
+  @media (min-width: 1200px) {
+    .btn--continue {
+      width: 120px; } }
+
+.btn--close {
+  cursor: pointer; }
+
+.btn--success {
+  width: 80px;
+  height: 25px;
+  margin: 2rem;
+  font-size: 1.2rem; }
 
 .card {
   border: 1px solid #7a7a7a;
@@ -61,6 +80,10 @@
     border: 1px solid #3cb4ac; }
   .card__original {
     padding: 2.5rem; }
+    @media (min-width: 1200px) {
+      .card__original--desktop {
+        display: flex;
+        flex-direction: column; } }
   @media (min-width: 900px) {
     .card__headings {
       display: flex;
@@ -81,7 +104,8 @@
     padding: 2rem 0; }
     @media (min-width: 1200px) {
       .card__desc {
-        font-size: 1.6rem; } }
+        font-size: 1.6rem;
+        order: 3; } }
   .card__container {
     display: flex;
     align-items: center; }
@@ -89,6 +113,9 @@
     font-size: 3.5rem;
     font-weight: 600;
     margin-right: 0.5rem; }
+    @media (min-width: 1200px) {
+      .card__days {
+        font-size: 2.5rem; } }
   .card__left {
     font-size: 1.5rem;
     color: #7a7a7a; }
@@ -98,9 +125,17 @@
     .card__footer {
       display: flex;
       justify-content: space-between; } }
+  @media (min-width: 1200px) {
+    .card__footer {
+      order: 2;
+      align-self: flex-end; } }
+  .card__addition {
+    z-index: 9;
+    animation: slideFromTop 1s linear;
+    transition: all 0.2s linear; }
 
 .modal {
-  width: 90%;
+  width: 60%;
   background-color: white;
   border-radius: 10px;
   position: absolute;
@@ -109,7 +144,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 55; }
+  z-index: 55;
+  padding: 2rem; }
   .modal__text-wrapper {
     width: 90%;
     margin: 0 auto;
@@ -148,8 +184,14 @@
   padding: 2.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  animation: slideFromTop 1s ease-in; }
+  align-items: center; }
+  @media (min-width: 1200px) {
+    .pledge {
+      flex-direction: row;
+      justify-content: space-between; } }
+  @media (min-width: 1200px) {
+    .pledge--no-pledge {
+      justify-content: flex-end; } }
   .pledge__p {
     font-size: 1.4rem;
     line-height: 2.5rem;
@@ -175,13 +217,16 @@
     border: 1px solid #ebebeb;
     cursor: pointer;
     text-align: center; }
+    @media (min-width: 1200px) {
+      .pledge__input {
+        width: 80px; } }
   .pledge__input-wrapper {
     position: relative; }
     .pledge__input-wrapper::after {
       content: "$";
       position: absolute;
       top: 50%;
-      left: 15px;
+      left: 12px;
       transform: translateY(-50%);
       font-size: 1.7rem;
       font-family: "Commissioner", sans-serif;
@@ -217,9 +262,36 @@
       border-radius: 50%;
       background-color: #3cb4ac;
       display: none; }
+    .label__select:hover, .label__select:active {
+      background: #ebebeb;
+      border: 1px solid #3cb4ac; }
 
 .label input:checked ~ .label__select:after {
   display: block; }
+
+.success-modal {
+  width: 60%;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 55;
+  padding: 3rem;
+  text-align: center; }
+  .success-modal__icon {
+    width: 5rem;
+    height: auto; }
+  .success-modal__heading {
+    font-size: 2rem;
+    padding: 2rem; }
+  .success-modal__desc {
+    color: #7a7a7a;
+    font-size: 1.2rem;
+    line-height: 2rem; }
 
 .hide-modal {
   display: none; }
