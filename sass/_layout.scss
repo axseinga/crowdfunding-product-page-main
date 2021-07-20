@@ -127,17 +127,19 @@ section {
     &,
     &:link,
     &:visited {
-      border-radius: 10rem;
-      width: 180px;
       text-align: center;
-      background-color: $color-body;
       border: $color-border;
       font-weight: 700;
       color: $color-grey;
+      border-radius: 10rem;
       cursor: pointer;
 
-      display: flex;
-      align-items: center;
+      @include respond(tablet) {
+        background-color: $color-body;
+        width: 180px;
+        display: flex;
+        align-items: center;
+      }
     }
 
     &:hover,
@@ -153,6 +155,11 @@ section {
 
     &__text {
       margin-left: 1.5rem;
+      display: none;
+
+      @include respond(tablet) {
+        display: block;
+      }
     }
   }
 }

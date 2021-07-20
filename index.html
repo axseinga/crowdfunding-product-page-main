@@ -213,13 +213,15 @@
             in the world?
           </p>
         </div>
-        <div class="card card--modal">
+        <div class="card card--modal card--active">
           <div class="card__original">
             <div class="card__headings modal__headings">
               <label class="card__label label">
                 <input class="label__radio label__radio--default" type="radio" name="pledge">
                 <span class="label__select"></span>
-                <h3 class="card__heading">Pledge with no reward</h3>
+                <div class="card__headings">
+                  <h3 class="card__heading">Pledge with no reward</h3>
+                </div>
               </label>
             </div>
             <p class="card__desc">
@@ -228,7 +230,7 @@
               updates via email.
             </p>
           </div>
-          <div class="card__addition hide-modal">
+          <div class="card__addition hidden">
             <hr class="modal__hr" />
           <div class="modal__pledge pledge">
             <button class="btn btn--continue pledge__btn-continue">
@@ -237,11 +239,11 @@
           </div>
           </div>
         </div>
-        <div class="card card--modal">
+        <div class="card card--modal card--active">
           <div class="card__original">
             <div class="modal__wrapper">
               <label class="card__label label">
-                <input class="label__radio label__radio--default" type="radio" name="pledge">
+                <input class="label__radio" type="radio" name="pledge">
                 <span class="label__select"></span>
                 <div class="card__headings">
                   <h3 class="card__heading">Bamboo Stand</h3>
@@ -263,33 +265,35 @@
               </div>
             </div>
           </div>
-          <hr class="modal__hr" />
-          <div class="modal__pledge pledge">
-            <label for="pledge" class="pledge__label"
+          <div class="card__addition hidden">
+            <hr class="modal__hr" />
+              <div class="modal__pledge pledge">
+                <label for="pledge" class="pledge__label"
               ><p class="pledge__p">Enter your pledge</p></label
-            >
-            <div class="pledge__buttons">
-              <span class="pledge__input-wrapper">
-                <input
-                type="number"
-                min="25"
-                id="pledge"
-                name="enter-pledge"
-                class="pledge__input"
-                required
-              />
-              </span>
-              <input type="submit" value="Continue" class="btn btn--continue pledge__btn-continue">
-              </input>
+               >
+              <div class="pledge__buttons">
+                <span class="pledge__input-wrapper">
+                  <input
+                  type="number"
+                  min="25"
+                  id="pledge"
+                  name="enter-pledge"
+                  class="pledge__input"
+                  required
+                />
+                </span>
+                <input type="submit" value="Continue" class="btn btn--continue pledge__btn-continue">
+                </input>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="card card--modal">
+        <div class="card card--modal card--active">
           <div class="card__original">
             <div class="modal__wrapper">
               <label class="card__label label">
-                <input class="label__radio label__radio--default" type="radio" name="pledge">
+                <input class="label__radio label__radio" type="radio" name="pledge">
                 <span class="label__select"></span>
                 <div class="card__headings">
                   <h3 class="card__heading">Black Edition Stand</h3>
@@ -311,22 +315,26 @@
               </div>
             </div>
           </div>
-          <hr class="modal__hr" />
-          <div class="modal__pledge pledge">
-            <label for="pledge" class="pledge__label"
-              ><p class="pledge__p">Enter your pledge</p></label
-            >
-            <div class="pledge__buttons">
-              <input
-                type="number"
-                min="75"
-                id="pledge"
-                name="enter-pledge"
-                class="pledge__input"
-                required
-              />
-              <input type="submit" value="Continue" class="btn btn--continue pledge__btn-continue">
-              </input>
+          <div class="card__addition hidden">
+            <hr class="modal__hr" />
+            <div class="modal__pledge pledge">
+              <label for="pledge" class="pledge__label"
+                ><p class="pledge__p">Enter your pledge</p></label
+              >
+              <div class="pledge__buttons">
+                <span class="pledge__input-wrapper">
+                  <input
+                  type="number"
+                  min="25"
+                  id="pledge"
+                  name="enter-pledge"
+                  class="pledge__input"
+                  required
+                />
+                </span>
+                <input type="submit" value="Continue" class="btn btn--continue pledge__btn-continue">
+                </input>
+              </div>
             </div>
           </div>
         </div>

@@ -78,38 +78,27 @@ if (modalCloseButton) {
   modalCloseButton.addEventListener("click", closeModalWhenCloseBtn);
 }
 
-// when card is hover change border color
-
-const cardList = document.querySelectorAll(".card--modal");
-
-if (cardList) {
-  cardList.forEach((card) => {
-    card.addEventListener("mouseover", function () {
-      console.log("Mouse over!!!");
-      card.classList.add("card--hover");
-    });
-  });
-
-  cardList.forEach((card) => {
-    card.addEventListener("mouseout", function () {
-      console.log("Mouse over!!!");
-      card.classList.remove("card--hover");
-    });
-  });
-}
-
 // when card is clicked show checkmark, change border, show card__additional
 
-const modalCheckmark = document.querySelector(".modal__checkmark");
-const cardAddition = document.querySelector(".card__addition");
+const radioButtons = document.querySelectorAll(".label__select");
+console.log(radioButtons);
+const cards = document.querySelectorAll(".card--active");
+const cardsFooter = document.querySelectorAll(".card__addition");
 
-if (cardList) {
-  cardList.forEach((card) => {
-    card.addEventListener("click", function () {
-      console.log("clicked!!!");
-      card.classList.add("card--hover");
-      modalCheckmark.style.display = "block";
-      cardAddition.classList.remove("hide-modal");
-    });
+radioButtons.forEach((btn, i) => {
+  btn.addEventListener("click", () => {
+    if (
+      !cards[i].classList.contains("card--selected") &&
+      !cards[i].classList.contains("card--disabled")
+    ) {
+      cards.forEach((card) => {
+        card.classList.remove("card--selected");
+      });
+      cardsFooter.forEach((footer) => {
+        footer.classList.add("hidden");
+      });
+      cards[i].classList.add("card--selected");
+      cardsFooter[i].classList.remove("hidden");
+    }
   });
-}
+});

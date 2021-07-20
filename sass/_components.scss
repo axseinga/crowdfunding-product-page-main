@@ -68,6 +68,10 @@
     border: 1px solid $color-primary;
   }
 
+  &--selected {
+    border: 1px solid $color-primary;
+  }
+
   &__original {
     padding: 2.5rem;
   }
