@@ -26,8 +26,15 @@ body {
 
   position: relative;
 
+  @include respond(tablet) {
+    padding-bottom: 25%;
+  }
+
   @include respond(desktop) {
     background-image: url(../images/image-hero-desktop.jpg);
+    background-size: contain;
+    padding-bottom: 30%;
+    background-position: top;
   }
 }
 
@@ -51,7 +58,7 @@ section {
 .intro {
   position: relative;
   padding: 4rem 2rem;
-  margin-top: -25px;
+  margin-top: -50px;
   align-items: center;
 
   @include respond(tablet) {

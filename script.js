@@ -1,3 +1,5 @@
+// Selectors //
+
 const mobileOpenButton = document.querySelector(".nav__mobile-ham");
 const mobileMenu = document.querySelector(".mobile-menu");
 const overlay = document.querySelector(".overlay");
@@ -19,6 +21,15 @@ const btnSuccess = document.querySelector(".btn--success");
 
 // Open - close mobile menu //
 
+const toggleImage = function (img, open, close) {
+  let imgSrc = document.querySelector(img);
+  if (imgSrc.src.match(open)) {
+    document.querySelector(img).src = close;
+  } else {
+    document.querySelector(img).src = open;
+  }
+};
+
 const toggleMobileMenu = function () {
   mobileMenu.classList.toggle("hidden");
   overlay.classList.toggle("hidden");
@@ -29,31 +40,21 @@ const toggleMobileMenu = function () {
   );
 };
 
-if (mobileOpenButton) {
-  mobileOpenButton.addEventListener("click", toggleMobileMenu);
-}
-
-const toggleImage = function (img, open, close) {
-  let imgSrc = document.querySelector(img);
-  if (imgSrc.src.match(open)) {
-    document.querySelector(img).src = close;
+const toggleMobileMenuFull = function () {
+  if (!modalBackProject.classList.contains("hide-modal")) {
+    closeModal();
+    toggleMobileMenu();
   } else {
-    document.querySelector(img).src = open;
+    toggleMobileMenu();
   }
 };
 
-const closeMenuWhenOverlayIsClicked = function () {
-  mobileMenu.classList.add("hidden");
-  overlay.classList.add("hidden");
-  toggleImage(
-    ".nav__mobile-ham",
-    "./images/icon-hamburger.svg",
-    "./images/icon-close-menu.svg"
-  );
-};
+if (mobileOpenButton) {
+  mobileOpenButton.addEventListener("click", toggleMobileMenuFull);
+}
 
 if (overlay) {
-  overlay.addEventListener("click", closeMenuWhenOverlayIsClicked);
+  overlay.addEventListener("click", toggleMobileMenu);
 }
 
 // Open modal - when clicked on 'Back this project'
@@ -190,6 +191,7 @@ pledgeForms.forEach((form) => {
       if (input === null) {
         // close modals and show succes message
         closeModal();
+        showSuccessMessage();
       } else {
         increaseTotal(input);
         increaseBackers();
@@ -207,4 +209,18 @@ btnSuccess.addEventListener("click", function () {
   modalSuccess.classList.remove("show-modal");
   modalSuccess.classList.add("hide-modal");
   overlayModal.classList.add("hidden");
+});
+
+// Modal animations
+
+document.addEventListener("animationstart", function (e) {
+  if (e.animationName === "fade-in") {
+    e.target.classList.add("did-fade-in");
+  }
+});
+
+document.addEventListener("animationend", function (e) {
+  if (e.animationName === "fade-out") {
+    e.target.classList.remove("did-fade-in");
+  }
 });

@@ -18,6 +18,20 @@
 .bookmarked-svg {
   filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(180deg) brightness(104%) contrast(107%); }
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0); }
+  to {
+    opacity: 1;
+    transform: scale(1); } }
+
+@keyframes fade-out {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
 .btn, .btn:link, .btn:visited {
   width: 140px;
   height: 35px;
@@ -53,6 +67,9 @@
   height: 25px;
   margin: 2rem;
   font-size: 1.2rem; }
+  @media (min-width: 1200px) {
+    .btn--success {
+      font-size: 1.5rem; } }
 
 .card {
   border: 1px solid #7a7a7a;
@@ -145,7 +162,9 @@
   justify-content: center;
   align-items: center;
   z-index: 55;
-  padding: 2rem; }
+  padding: 2rem;
+  transform-origin: 100% 0%;
+  animation: fade-in 1.5s; }
   .modal__text-wrapper {
     width: 90%;
     margin: 0 auto;
@@ -285,13 +304,22 @@
   .success-modal__icon {
     width: 5rem;
     height: auto; }
+    @media (min-width: 1200px) {
+      .success-modal__icon {
+        width: 6rem; } }
   .success-modal__heading {
     font-size: 2rem;
     padding: 2rem; }
+    @media (min-width: 1200px) {
+      .success-modal__heading {
+        font-size: 3rem; } }
   .success-modal__desc {
     color: #7a7a7a;
     font-size: 1.2rem;
     line-height: 2rem; }
+    @media (min-width: 1200px) {
+      .success-modal__desc {
+        font-size: 1.6rem; } }
 
 .hide-modal {
   display: none; }
@@ -319,7 +347,6 @@ html {
   height: 100%;
   background: rgba(0, 0, 0, 0.65);
   background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.301) 30%, rgba(0, 0, 0, 0.8) 95%);
-  z-index: 100;
   transform: scale(1.8);
   z-index: 9; }
 
@@ -368,9 +395,13 @@ html {
   border-radius: 8px;
   max-width: 500px;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 99; }
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  transform-origin: 100% 0%;
+  animation: fade-in 1.5s; }
 
 .mobile-menu__list {
   list-style: none;
@@ -417,9 +448,15 @@ body {
   width: 100%;
   padding-bottom: 40%;
   position: relative; }
+  @media (min-width: 900px) {
+    .header {
+      padding-bottom: 25%; } }
   @media (min-width: 1200px) {
     .header {
-      background-image: url(../images/image-hero-desktop.jpg); } }
+      background-image: url(../images/image-hero-desktop.jpg);
+      background-size: contain;
+      padding-bottom: 30%;
+      background-position: top; } }
 
 section {
   width: 76%;
@@ -437,7 +474,7 @@ section {
 .intro {
   position: relative;
   padding: 4rem 2rem;
-  margin-top: -25px;
+  margin-top: -50px;
   align-items: center; }
   @media (min-width: 900px) {
     .intro {

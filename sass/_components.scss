@@ -47,6 +47,10 @@
     height: 25px;
     margin: 2rem;
     font-size: 1.2rem;
+
+    @include respond(desktop) {
+      font-size: 1.5rem;
+    }
   }
 }
 

@@ -10,6 +10,8 @@
   align-items: center;
   z-index: 55;
   padding: 2rem;
+  transform-origin: 100% 0%;
+  animation: fade-in 1.5s;
 
   &__text-wrapper {
     width: 90%;
@@ -201,17 +203,29 @@
   &__icon {
     width: 5rem;
     height: auto;
+
+    @include respond(desktop) {
+      width: 6rem;
+    }
   }
 
   &__heading {
     font-size: 2rem;
     padding: 2rem;
+
+    @include respond(desktop) {
+      font-size: 3rem;
+    }
   }
 
   &__desc {
     color: $color-grey;
     font-size: 1.2rem;
     line-height: 2rem;
+
+    @include respond(desktop) {
+      font-size: 1.6rem;
+    }
   }
 }
 
