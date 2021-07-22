@@ -1,4 +1,4 @@
-// Selectors //
+// Selectors
 
 const mobileOpenButton = document.querySelector(".nav__mobile-ham");
 const mobileMenu = document.querySelector(".mobile-menu");
@@ -8,7 +8,7 @@ const modalBackProject = document.querySelector(".modal");
 const overlayModal = document.querySelector(".overlay-modal");
 const modalCloseButton = document.querySelector(".modal__close");
 const selectRewardBtns = document.querySelectorAll(".card__cta");
-const radioButtons = document.querySelectorAll(".label__select");
+const radioButtons = document.querySelectorAll(".card__label");
 const cards = document.querySelectorAll(".card--active");
 const cardsFooter = document.querySelectorAll(".card__addition");
 const bookmarkBtn = document.querySelector(".intro__bookmark");
