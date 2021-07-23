@@ -605,22 +605,19 @@ section {
     @media (min-width: 900px) {
       .stats__hr {
         transform: rotate(90deg); } }
-
-progress[value] {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 90%;
-  height: 10px;
-  padding: 2rem 0; }
-  @media (min-width: 900px) {
-    progress[value] {
-      padding: 4rem 0; } }
-  progress[value]::-webkit-progress-bar {
+  .stats__progress {
+    width: 90%;
+    height: 10px;
+    border-radius: 8px;
     background-color: #ebebeb;
-    border-radius: 8px; }
-  progress[value]::-webkit-progress-value {
-    background-color: #3cb4ac;
-    border-radius: 8px; }
+    margin: 2rem 0; }
+    .stats__progress::after {
+      content: "";
+      background-color: #3cb4ac;
+      display: block;
+      width: 80%;
+      height: 10px;
+      border-radius: 8px; }
 
 .about {
   border-radius: 10px;
