@@ -53,23 +53,23 @@ Users should be able to:
 
 ### What I learned
 
-This project took me very long time as I was coming back and forth to it many times. After I finished most of styling I got focused on practising pure JS doing other projects and exercises. So in the end my code it looks like nice spaghetti code but I am pround I finally finished it as it feels like forever comparing to other projects from Frondend Mentor.
+This project took me a very long time as I was coming back and forth to it many times. After I finished most of the styling I got focused on practicing pure JS doing other projects and exercises. So in the end my code looks like nice spaghetti code but I am proud I finally finished it as it feels like forever compared to other projects from Frondend Mentor.
 
-The most challenging parts were... oh everything here was challenging a bit. If you think about it as sigle components it might be easy to code but in the end it was really hard to make it all work together.
+The most challenging parts were... oh everything here was challenging a bit. If you think about it as single components it might be easy to code but in the end, it was really hard to make it all work together.
 
-I learned more about radio buttons and how to use JS to manipulate them, I used forEach loop on radio buttons to achieve that. During this challenge I read a lot about CSS/JS animations and saw many different approaches. I found out it is priceless to be able to get help from other people who code as sometimes you can read so much and coudn't really be able to find the best solution and get lost. And here big credit goes to [tediko](https://www.frontendmentor.io/profile/tediko) for helping me out with animations. Thanks to him I had a chance to learn about [focus-trap](https://uxdesign.cc/how-to-trap-focus-inside-modal-to-make-it-ada-compliant-6a50f9a70700) as well.
+I learned more about radio buttons and how to use JS to manipulate them, I used forEach loop on radio buttons to achieve that. During this challenge, I read a lot about CSS/JS animations and saw many different approaches. I found out it is priceless to be able to get help from other people who code as sometimes you can read so much and couldn't really be able to find the best solution and get lost. And here big credit goes to [tediko](https://www.frontendmentor.io/profile/tediko) for helping me out with animations. Thanks to him I had a chance to learn about [focus-trap](https://uxdesign.cc/how-to-trap-focus-inside-modal-to-make-it-ada-compliant-6a50f9a70700) as well.
 
 This challenge was perfect to learn more about plain Javascript. The page might look simple but it actually required a lot of functions to control the behavior of modals and overlay.
 
 ### Continued development
 
-During working on this project I found out that @import in SASS is an outdated practise already and I should use @use and @forward so in my next project I am definitely going to use it! [1](https://dev.to/ibreakcodes/use-forward-in-sass-2bab)[2](https://www.youtube.com/watch?v=CR-a8upNjJ0)
+During working on this project I found out that @import in SASS is an outdated practice already and I should use @use and @forward so in my next project I am definitely going to use them! [1](https://dev.to/ibreakcodes/use-forward-in-sass-2bab)[2](https://www.youtube.com/watch?v=CR-a8upNjJ0)
 
 ### Useful resources
 
--   [Stackoverflow: Scroll to top](https://stackoverflow.com/questions/1144805/scroll-to-the-top-of-the-page-using-javascript) - This thread helped me to figure out how to code a function which takes User to the top of the page. Without that the page was hard to navigate.
--   [Stackoverflow: How can I parse a string with a comma thousand separator to a number?](https://stackoverflow.com/questions/11665884/how-can-i-parse-a-string-with-a-comma-thousand-separator-to-a-number) - This thread help me find easy solution to convert total money backed to a number so I can calculate new total after User contributes to it.
--   [Animating from “display: block” to “display: none”](https://www.impressivewebs.com/animate-display-block-none/) - and why it is not possible easy way. It is good to read comments as well!
+-   [Stackoverflow: Scroll to top](https://stackoverflow.com/questions/1144805/scroll-to-the-top-of-the-page-using-javascript) - This thread helped me to figure out how to code a function that takes User to the top of the page. Without that the page was hard to navigate.
+-   [Stackoverflow: How can I parse a string with a comma thousand separator to a number?](https://stackoverflow.com/questions/11665884/how-can-i-parse-a-string-with-a-comma-thousand-separator-to-a-number) - This thread helps me find an easy solution to convert total money backed to a number so I can calculate new total after User contributes to it.
+-   [Animating from “display: block” to “display: none”](https://www.impressivewebs.com/animate-display-block-none/) - and why it is not an easy one. It is good to read comments as well!
 -   [Focus-trap](https://uxdesign.cc/how-to-trap-focus-inside-modal-to-make-it-ada-compliant-6a50f9a70700)
 
 ## Author
