@@ -27,27 +27,30 @@
     <div class="overlay-modal hidden"></div>
     <div class="page-wrapper">
       <header class="header">
-        <nav class="nav">
-          <a href="#" class="nav__logo"><img src="./images/logo.svg" alt="Crowdfund Logo" /></a>
-          <button class="nav__mobile-menu">
-            <img
-              src="./images/icon-hamburger.svg"
-              alt=""
-              class="nav__mobile-ham"
-            />
-          </button>
-          <ul class="nav__menu">
-            <li class="nav__item">
-              <a href="#" class="nav__link">About</a>
-            </li>
-            <li class="nav__item">
-              <a href="#" class="nav__link">Discover</a>
-            </li>
-            <li class="nav__item">
-              <a href="#" class="nav__link">Get Started</a>
-            </li>
-          </ul>
-        </nav>
+        <div class="wrapper-nav">
+          <nav class="nav">
+            <a href="#" class="nav__logo"><img src="./images/logo.svg" alt="Crowdfund Logo" /></a>
+            <button class="nav__mobile-menu">
+              <img
+                src="./images/icon-hamburger.svg"
+                alt=""
+                class="nav__mobile-ham"
+              />
+            </button>
+            <ul class="nav__menu">
+              <li class="nav__item">
+                <a href="#" class="nav__link">About</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Discover</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Get Started</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
 
         <div class="mobile-menu hidden">
           <div class="mobile-menu__content">
@@ -71,7 +74,6 @@
       <section class="intro">
         <img
           src="./images/logo-mastercraft.svg"
-          alt="Mastercraft Logo"
           class="intro__mastercraft-logo"
         />
         <h1 class="intro__heading">Mastercraft Bamboo Monitor Riser</h1>
@@ -231,7 +233,7 @@
             </p>
           </div>
           <div class="card__addition hide-footer">
-            <hr class="modal__hr" />
+            <hr class="modal__hr"/>
           <div class="modal__pledge pledge pledge--no-pledge">
             <button class="btn btn--continue pledge__btn-continue">
               Continue
@@ -265,8 +267,9 @@
               </div>
             </div>
           </div>
+          
           <div class="card__addition hide-footer">
-            <hr class="modal__hr" />
+            <hr class="modal__hr"/>
               <div class="modal__pledge pledge">
                 <label for="pledge" class="pledge__label"
               ><p class="pledge__p">Enter your pledge</p></label

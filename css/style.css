@@ -6,10 +6,12 @@
 
 .hide-footer {
   margin-top: -100px;
-  visibility: hidden; }
+  visibility: hidden;
+  opacity: 0; }
 
 .show-footer {
   visibility: visible;
+  opacity: 1;
   margin-top: 0; }
 
 .bookmarked-text {
@@ -18,19 +20,30 @@
 .bookmarked-svg {
   filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(180deg) brightness(104%) contrast(107%); }
 
-@keyframes fade-in {
-  from {
+.fade-in-modal {
+  animation: fadeIn 1s ease-in-out forwards; }
+
+@keyframes fadeIn {
+  0% {
     opacity: 0;
+    visibility: hidden;
     transform: scale(0); }
-  to {
+  100% {
     opacity: 1;
     transform: scale(1); } }
 
-@keyframes fade-out {
-  from {
-    opacity: 1; }
-  to {
-    opacity: 0; } }
+.fade-out-modal {
+  animation: fadeOut 1s ease-in-out; }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1); }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0); } }
 
 .btn, .btn:link, .btn:visited {
   width: 140px;
@@ -87,9 +100,9 @@
       width: 80%;
       margin: 1rem auto; } }
   .card--disabled {
-    opacity: 0.4; }
+    opacity: 0.4;
+    pointer-events: none; }
   .card--modal {
-    margin: 1rem 2rem;
     padding: 0; }
   .card--hover {
     border: 1px solid #3cb4ac; }
@@ -148,14 +161,15 @@
       align-self: flex-end; } }
   .card__addition {
     z-index: 9;
-    animation: slideFromTop 1s linear;
     transition: all 0.2s linear; }
 
 .modal {
-  width: 60%;
   background-color: white;
   border-radius: 10px;
   position: absolute;
+  margin: 0 10px;
+  right: 0;
+  left: 0;
   top: 100px;
   display: flex;
   flex-direction: column;
@@ -163,8 +177,13 @@
   align-items: center;
   z-index: 55;
   padding: 2rem;
-  transform-origin: 100% 0%;
-  animation: fade-in 1.5s; }
+  transform-origin: 100% 0%; }
+  @media (min-width: 900px) {
+    .modal {
+      width: 60%;
+      margin: auto auto;
+      right: auto;
+      left: auto; } }
   .modal__text-wrapper {
     width: 90%;
     margin: 0 auto;
@@ -197,10 +216,11 @@
       .modal__desc {
         font-size: 1.6rem; } }
   .modal__hr {
-    border: 1px solid #ebebeb; }
+    border: 1px solid #ebebeb;
+    width: 100%; }
 
 .pledge {
-  padding: 2.5rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center; }
@@ -349,6 +369,10 @@ html {
   background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.301) 30%, rgba(0, 0, 0, 0.8) 95%);
   transform: scale(1.8);
   z-index: 9; }
+
+.wrapper-nav {
+  margin: 0 auto;
+  max-width: 1500px; }
 
 .nav {
   height: 30px;

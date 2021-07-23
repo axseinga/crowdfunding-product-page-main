@@ -1,26 +1,28 @@
 .hidden {
-  display: none;
+    display: none;
 }
 
 .show-modal {
-  display: block;
+    display: block;
 }
 
 .hide-footer {
-  margin-top: -100px;
-  visibility: hidden;
+    margin-top: -100px;
+    visibility: hidden;
+    opacity: 0;
 }
 
 .show-footer {
-  visibility: visible;
-  margin-top: 0;
+    visibility: visible;
+    opacity: 1;
+    margin-top: 0;
 }
 
 .bookmarked-text {
-  color: $color-secondary;
+    color: $color-secondary;
 }
 
 .bookmarked-svg {
-  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(180deg)
-    brightness(104%) contrast(107%);
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(180deg)
+        brightness(104%) contrast(107%);
 }
