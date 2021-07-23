@@ -63,7 +63,7 @@ This challenge was perfect to learn more about plain Javascript. The page might 
 
 ### Continued development
 
-During working on this project I found out that @import in SASS is an outdated practice already and I should use @use and @forward so in my next project I am definitely going to use them! [1](https://dev.to/ibreakcodes/use-forward-in-sass-2bab)[2](https://www.youtube.com/watch?v=CR-a8upNjJ0)
+During working on this project I found out that @import in SASS is an outdated practice already and I should use @use and @forward so in my next project I am definitely going to use them! [[1]](https://dev.to/ibreakcodes/use-forward-in-sass-2bab)[[2]](https://www.youtube.com/watch?v=CR-a8upNjJ0)
 
 ### Useful resources
 
